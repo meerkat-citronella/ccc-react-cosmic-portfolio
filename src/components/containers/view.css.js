@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { media } from '../../constants.js'
+import styled from "styled-components";
+import { media } from "../../constants.js";
 
 export const PageView = styled.section`
 	min-height: 100%;
@@ -31,7 +31,7 @@ export const PageView = styled.section`
 	}
 
 	a.contact-link:hover {
-		color: black;
+		opacity: 0.5;
 	}
 
 	@media ${media.PHONE} {
@@ -48,4 +48,4 @@ export const PageView = styled.section`
 			line-height: 2.5rem;
 		}
 	}
-`
+`;

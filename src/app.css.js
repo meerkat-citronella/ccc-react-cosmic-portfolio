@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { media } from './constants.js'
+import styled from "styled-components";
+import { media } from "./constants.js";
 
 export const StyledApp = styled.main`
 	text-align: center;
@@ -152,7 +152,7 @@ export const StyledApp = styled.main`
 	}
 
 	.masonry-grid {
-		column-count: 4;
+		column-count: 2;
 		column-gap: 1em;
 	}
 
@@ -227,4 +227,4 @@ export const StyledApp = styled.main`
 			transform: rotate(360deg);
 		}
 	}
-`
+`;

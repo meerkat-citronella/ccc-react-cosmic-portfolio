@@ -1,10 +1,9 @@
 import React from "react";
-import Chart from "chart.js";
-import { HorizontalBar, Radar } from "react-chartjs-2";
-// import { Form, Button } from 'semantic-ui-react'
+import { Radar } from "react-chartjs-2";
 
 import { PageView } from "./view.css.js";
 import { mapData } from "../../lib/helpers";
+import { getNestedObject } from "./../../lib/helpers";
 
 const About = ({ isVisibile, data }) => {
 	const styles = {
@@ -95,15 +94,24 @@ const About = ({ isVisibile, data }) => {
 		});
 	};
 
+	function createMarkup(aboutField) {
+		// aboutField: one of: about_from, about_elevator_speech
+		let markupObj = {
+			__html: data.aboutCopy[aboutField],
+		};
+		return markupObj;
+	}
+
 	return (
 		<PageView className="about-view" style={styles}>
 			<div className="section-wrapper">
 				<div className="about-section">
 					<h1 className="about-header">Elevator pitch:</h1>
-					<p>{data.aboutCopy.about_elevator_speech}</p>
-					<p>{data.aboutCopy.about_intro}</p>
+					<p
+						dangerouslySetInnerHTML={createMarkup("about_elevator_speech")}
+					></p>
 					<h1 className="about-header">Background & Availablity:</h1>
-					<p>{data.aboutCopy.about_from}</p>
+					<p dangerouslySetInnerHTML={createMarkup("about_from")}></p>
 				</div>
 
 				<div className="about-section graph-section">

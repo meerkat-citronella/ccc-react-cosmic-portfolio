@@ -10,13 +10,11 @@ const Resume = ({ isVisible, data }) => {
 
   return (
     <PageView className="resume-view" style={styles}>
-      <div>
-        <p>
-          <a className="contact-link" href={ResumePDF} target="_blank">
-            Download my r&#233;sum&#233;
-          </a>
-        </p>
-      </div>
+      <p>
+        <a className="contact-link" href={ResumePDF} target="_blank">
+          Download my r&#233;sum&#233;
+        </a>
+      </p>
     </PageView>
   );
 };

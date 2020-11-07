@@ -1,3 +1,3 @@
 export const media = {
-	PHONE: 'only screen and (max-width: 599px)',
-}
+  PHONE: "only screen and (max-width: 599px)",
+};

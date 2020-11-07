@@ -49,9 +49,12 @@ export const StyledApp = styled.main`
   }
 
   @media ${media.PHONE} {
+    display: block;
+
     .main-view {
       width: 100%;
       margin-left: 0;
+      position: static;
     }
   }
 

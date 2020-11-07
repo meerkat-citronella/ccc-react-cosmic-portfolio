@@ -4,19 +4,21 @@ import ResumePDF from "./../../assets/carter-chen-resume.pdf";
 import { PageView } from "./view.css.js";
 
 const Resume = ({ isVisible, data }) => {
-	const styles = {
-		width: isVisible ? "100%" : "0",
-	};
+  const styles = {
+    width: isVisible ? "100%" : "0",
+  };
 
-	return (
-		<PageView className="resume-view" style={styles}>
-			<p>
-				<a className="contact-link" href={ResumePDF} target="_blank">
-					Download my r&#233;sum&#233;
-				</a>
-			</p>
-		</PageView>
-	);
+  return (
+    <PageView className="resume-view" style={styles}>
+      <div>
+        <p>
+          <a className="contact-link" href={ResumePDF} target="_blank">
+            Download my r&#233;sum&#233;
+          </a>
+        </p>
+      </div>
+    </PageView>
+  );
 };
 
 export default Resume;

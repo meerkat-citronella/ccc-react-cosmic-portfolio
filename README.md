@@ -10,6 +10,7 @@ Frontend: React
 Backend: Cosmic JS
 
 Instructions:
-'npm run build' to build to 'public' folder
-'firebase serve --only hosting' to see what you have
-'firebase deploy' to deploy newest version to Firebase, which automatically deploys to Hover url
+'npm run build' to build to 'public' folder,
+'npm run start' to spin up locally,
+'firebase serve --only hosting' to see what you have,
+'firebase deploy' to deploy newest version to Firebase, which automatically deploys to Hover url,

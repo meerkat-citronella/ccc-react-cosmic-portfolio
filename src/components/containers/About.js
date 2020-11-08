@@ -3,7 +3,6 @@ import { Radar } from "react-chartjs-2";
 
 import { PageView } from "./view.css.js";
 import { mapData } from "../../lib/helpers";
-import { getNestedObject } from "./../../lib/helpers";
 
 const About = ({ isVisible, data }) => {
   const styles = {
@@ -83,24 +82,18 @@ const About = ({ isVisible, data }) => {
   };
 
   const logos = () => {
-    return data.companies.map((item) => {
-      return (
-        <picture className="flex-item logos">
-          <a href={item.metadata.company_link} target="_blank">
-            <img src={item.metadata.logo.url} alt="logo" />
-          </a>
-        </picture>
-      );
-    });
+    return data.companies.map((item, ndx) => (
+      <picture className="flex-item logos" key={ndx}>
+        <a href={item.metadata.company_link} target="_blank">
+          <img src={item.metadata.logo.url} alt="logo" />
+        </a>
+      </picture>
+    ));
   };
 
-  function createMarkup(aboutField) {
+  const createMarkup = (aboutField) =>
     // aboutField: one of: about_from, about_elevator_speech
-    let markupObj = {
-      __html: data.aboutCopy[aboutField],
-    };
-    return markupObj;
-  }
+    data.aboutCopy[aboutField];
 
   return (
     <PageView className="about-view" style={styles}>
@@ -108,10 +101,14 @@ const About = ({ isVisible, data }) => {
         <div className="about-section">
           <h1 className="about-header">Elevator pitch:</h1>
           <p
-            dangerouslySetInnerHTML={createMarkup("about_elevator_speech")}
+            ref={(el) =>
+              el && (el.innerHTML = createMarkup("about_elevator_speech"))
+            }
           ></p>
           <h1 className="about-header">Background & Availablity:</h1>
-          <p dangerouslySetInnerHTML={createMarkup("about_from")}></p>
+          <p
+            ref={(el) => el && (el.innerHTML = createMarkup("about_from"))}
+          ></p>
         </div>
 
         <div className="about-section graph-section">

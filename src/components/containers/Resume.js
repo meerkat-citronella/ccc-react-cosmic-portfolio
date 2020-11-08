@@ -3,7 +3,7 @@ import React from "react";
 import ResumePDF from "./../../assets/carter-chen-resume.pdf";
 import { PageView } from "./view.css.js";
 
-const Resume = ({ isVisible, data }) => {
+const Resume = ({ isVisible }) => {
   const styles = {
     width: isVisible ? "100%" : "0",
   };

@@ -8,11 +8,8 @@ const Portfolio = ({ isVisible, data }) => {
     width: isVisible ? "100%" : "0",
   };
 
-  const projectList = () => {
-    return data.map((item) => {
-      return <Tile info={item} />;
-    });
-  };
+  const projectList = () =>
+    data.map((item, ndx) => <Tile info={item} key={ndx} />);
 
   return (
     <PageView className="portfolio-view" style={styles}>

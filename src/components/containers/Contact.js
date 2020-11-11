@@ -2,7 +2,7 @@ import React from "react";
 
 import { PageView } from "./view.css.js";
 import { FlexBox } from "./flexbox.css.js";
-import { GithubButton } from "./../widgets/githubButton";
+import { GithubButton, DevpostButton } from "../widgets/buttons";
 
 const Contact = ({ isVisible }) => {
   const styles = {
@@ -20,6 +20,12 @@ const Contact = ({ isVisible }) => {
         <GithubButton
           url={"https://github.com/meerkat-citronella"}
           textContent={"Follow @meerkat-citronella"}
+        />
+        <DevpostButton
+          url={
+            "https://devpost.com/cartercwchen?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"
+          }
+          textContent={"My Devpost portfolio"}
         />
       </FlexBox>
     </PageView>

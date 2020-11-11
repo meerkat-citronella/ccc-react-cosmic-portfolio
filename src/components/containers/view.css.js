@@ -25,8 +25,7 @@ export const PageView = styled.section`
   }
 
   a.contact-link {
-    font-size: 2.5rem;
-    line-height: 90vh;
+    font-size: 2em;
     color: black;
   }
 
